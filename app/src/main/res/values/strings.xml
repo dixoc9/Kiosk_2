@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">SecureShip1</string>
+    <string name="slogan">SHIP YOUR VALUABLES HOME SECURELY</string>
+    <string name="getstarted">GET STARTED</string>
+    <string name="logodescr">mainPageLogo</string>
+    <string name="formPrompt">PLEASE COMPLETE THE FORM BELOW</string>
+    <string name="firstName">First Name</string>
+    <string name="lastName">Last Name</string>
+    <string name="telephone">Telephone Number</string>
+    <string name="email">Email Address</string>
+    <string name="liquid">Liquid</string>
+    <string name="lighter">Lighter</string>
+    <string name="tool">Knife/Tool</string>
+    <string name="itemType">SELECT ITEM DESCRIPTION</string>
+    <string name="continueButton">CONTINUE</string>
+    <string name="confirmInfo">IF THE INFORMATION BELOW IS CORRECT PLEASE PRESS SUBMIT</string>
+    <string name="submitButton">SUBMIT</string>
+    <string name="successButton">SUCCESS!</string>
+    <string name="custInfo"></string>
+</resources>
