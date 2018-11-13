@@ -22,10 +22,8 @@ public class ReviewActivity extends AppCompatActivity
 {
     TextView rvwInfo;
     Bitmap bM;
-
     Button mSubmitButton;
     Button mBackButton;
-
     String fName;
     String lName;
     String tele;
@@ -46,10 +44,7 @@ public class ReviewActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review);
 
-        //finds the text view to display input from previous activity
         rvwInfo = findViewById(R.id.custInfo);
-
-        //initialize all fields of the class so that none are null
         fName = getIntent().getExtras().getString("first");
         lName = getIntent().getExtras().getString("last");
         tele = getIntent().getExtras().getString("tP");
@@ -62,18 +57,10 @@ public class ReviewActivity extends AppCompatActivity
         dS = getCurrDate(toDay);
         tS = getCurrTime(toDay);
         allInfo = fName + " " + lName + "\n" + tele + "\n" + email + "\n" + item + "\n" + "$" + cost;
-
-        //sets text view to data entered in previous activity
         rvwInfo.setText(allInfo);
-
-        //makes a qr id that is 27 characters long to use as key in database
         makeQRid();
-
-        //string used to make the qr code
         String t = fName.toUpperCase() + lName.toUpperCase() + tele + email.toUpperCase()
-                + item.toUpperCase() + cost + getCurrTime(toDay) + getCurrDate(toDay) + "DEN" + "01";
-
-        //makes a qr code bitmap to display and print in the next activity
+                + item.toUpperCase() + cost + tS + dS + "DEN" + "01";
         makeQRcode(t);
 
         mSubmitButton = findViewById(R.id.submitButton);
@@ -82,22 +69,8 @@ public class ReviewActivity extends AppCompatActivity
             @Override
             public void onClick(View v3)
             {
-                /*makeQRid();
-                String t = fName.toUpperCase() + lName.toUpperCase() + tele + email.toUpperCase()
-                        + item.toUpperCase() + cost + getCurrTime(toDay) + getCurrDate(toDay) + "DEN" + "01";
-                makeQRcode(t);
-                dS = getCurrDate(toDay);
-                tS = getCurrTime(toDay);
-                String type = "update";
-                DBConnection dbc = new DBConnection(this);
                 updateDatabase(fName, lName, tele, email, item, qRiD, cost, dS, tS, arptID, kNum);
-                dbc.execute(type, fName, lName, tele, email, item, qRiD, cost, dS, tS, arptID, kNum);
-                openQuickResponseActivity();*/
-
-                //updateDatabase(fName, lName, tele, email, item, qRiD, cost, dS, tS, arptID, kNum);
-                //openQuickResponseActivity();
-
-                updateQRID(qRiD);
+                openQuickResponseActivity();
             }
         });
 
@@ -146,8 +119,8 @@ public class ReviewActivity extends AppCompatActivity
     {
         String lFive = makeFIVE(lName);
         String fFive = makeFIVE(fName);
-        String dateStamp = getCurrDate(toDay);
-        String timeStamp = getCurrTime(toDay);
+        String dateStamp = dS;
+        String timeStamp = tS;
         String airport = arptID;
         String kiosk = kNum;
         qRiD = lFive + fFive + dateStamp + timeStamp + airport + kiosk;
@@ -234,30 +207,6 @@ public class ReviewActivity extends AppCompatActivity
         DBConnection dbc = new DBConnection(this);
         dbc.execute(type, f, l, p, e, i, q, c, d, t, a, k);
     }
-
-    /* METHOD TO TEST IF ABLE TO ACTUALLY UPDATE DATABASE USING CURRENT CODE */
-    public void updateQRID(String q)
-    {
-        String type = "update";
-        DBConnection dbc = new DBConnection(this);
-        dbc.execute(type, q);
-    }
-
-    /* METHOD FOR SUBMIT BUTTON TO UPDATE DATABASE WHEN ON *
-    public void OnUpdate(View v3)
-    {
-        makeQRid();
-        String t = fName.toUpperCase() + lName.toUpperCase() + tele + email.toUpperCase()
-                + item.toUpperCase() + cost + getCurrTime(toDay) + getCurrDate(toDay) + "DEN" + "01";
-        makeQRcode(t);
-        dS = getCurrDate(toDay);
-        tS = getCurrTime(toDay);
-        String type = "update";
-        DBConnection dbc = new DBConnection(this);
-        //updateDatabase(fName, lName, tele, email, item, qRiD, cost, dS, tS, arptID, kNum);
-        dbc.execute(type, fName, lName, tele, email, item, qRiD, cost, dS, tS, arptID, kNum);
-        //openQuickResponseActivity();
-    }*/
 }
 
 

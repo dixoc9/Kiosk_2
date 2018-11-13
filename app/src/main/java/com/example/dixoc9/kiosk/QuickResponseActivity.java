@@ -41,7 +41,7 @@ public class QuickResponseActivity extends AppCompatActivity
         });
     }
 
-    /* METHOD TO PRINT THE QR CODE ON THE LABEL PRINTER *
+    /* METHOD TO PRINT THE QR CODE ON THE LABEL PRINTER
     public void printQRcode(Bitmap bMap)
     {
         //printing by name(qrid) perhaps to receipt paper or sticker paper

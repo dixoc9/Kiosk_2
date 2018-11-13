@@ -30,16 +30,12 @@ class DBConnection extends AsyncTask<String, Void, String>
     protected String doInBackground(String... params)
     {
         String type = params[0];
-        //String update_url = "http://student2.cs.appstate.edu/dixoncs/SecureShip/skeleton/updateDatabase.php";
-        //String update_url = "http://10.0.2.2/updateDatabse.php";
-        //String update_url = "http://192.168.1.5/updateDatabse.php";
         String update_url = "http://student2.cs.appstate.edu/dixoncs/SecureShip/skeleton/updateDatabase.php";
         if(type.equals("update"))
         {
             try
             {
-                String iD = params[1];
-                /*String first = params[1];
+                String first = params[1];
                 String last = params[2];
                 String phone = params[3];
                 String emAddr = params[4];
@@ -49,27 +45,15 @@ class DBConnection extends AsyncTask<String, Void, String>
                 String date = params[8];
                 String time = params[9];
                 String airport = params[10];
-                String kiosk = params[11];*/
-                /*String first = "1234";
-                String last = "1234";
-                String phone = "1234";
-                String emAddr = "1234";
-                String item = "1234";
-                String qrid = "1234";
-                String cost = "12.34";
-                String date = "123444";
-                String time = "123444";
-                String airport = "123";
-                String kiosk = "12";*/
+                String kiosk = params[11];
                 URL url = new URL(update_url);
-                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
                 httpURLConnection.setDoOutput(true);
                 httpURLConnection.setDoInput(true);
                 OutputStream os = httpURLConnection.getOutputStream();
                 BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
-                String postData = URLEncoder.encode("iD", "UTF-8")+"="+URLEncoder.encode(iD, "UTF-8");
-                /*String postData = URLEncoder.encode("first", "UTF-8")+"="+URLEncoder.encode(first, "UTF-8")+"&"
+                String postData = URLEncoder.encode("first", "UTF-8")+"="+URLEncoder.encode(first, "UTF-8")+"&"
                         +URLEncoder.encode("last", "UTF-8")+"="+URLEncoder.encode(last, "UTF-8")+"&"
                         +URLEncoder.encode("phone", "UTF-8")+"="+URLEncoder.encode(phone, "UTF-8")+"&"
                         +URLEncoder.encode("emAddr", "UTF-8")+"="+URLEncoder.encode(emAddr, "UTF-8")+"&"
@@ -79,7 +63,7 @@ class DBConnection extends AsyncTask<String, Void, String>
                         +URLEncoder.encode("date", "UTF-8")+"="+URLEncoder.encode(date, "UTF-8")+"&"
                         +URLEncoder.encode("time", "UTF-8")+"="+URLEncoder.encode(time, "UTF-8")+"&"
                         +URLEncoder.encode("airport", "UTF-8")+"="+URLEncoder.encode(airport, "UTF-8")+"&"
-                        +URLEncoder.encode("kiosk", "UTF-8")+"="+URLEncoder.encode(kiosk, "UTF-8");*/
+                        +URLEncoder.encode("kiosk", "UTF-8")+"="+URLEncoder.encode(kiosk, "UTF-8");
                 bw.write(postData);
                 bw.flush();
                 bw.close();
