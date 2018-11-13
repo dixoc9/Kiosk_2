@@ -1,20 +1,32 @@
 <resources>
-    <string name="app_name">SecureShip1</string>
+    <string name="app_name">SecureShip</string>
     <string name="slogan">SHIP YOUR VALUABLES HOME SECURELY</string>
     <string name="getstarted">GET STARTED</string>
     <string name="logodescr">mainPageLogo</string>
     <string name="formPrompt">PLEASE COMPLETE THE FORM BELOW</string>
-    <string name="firstName">First Name</string>
-    <string name="lastName">Last Name</string>
-    <string name="telephone">Telephone Number</string>
-    <string name="email">Email Address</string>
+    <string name="firstName">First Name: Courtney</string>
+    <string name="lastName">Last Name: Dixon</string>
+    <string name="telephone">Telephone Number: 9803332265</string>
+    <string name="email">Email Address: cdixon@yahoo.com</string>
     <string name="liquid">Liquid</string>
     <string name="lighter">Lighter</string>
     <string name="tool">Knife/Tool</string>
     <string name="itemType">SELECT ITEM DESCRIPTION</string>
     <string name="continueButton">CONTINUE</string>
-    <string name="confirmInfo">IF THE INFORMATION BELOW IS CORRECT PLEASE PRESS SUBMIT</string>
+    <string name="confirmPrompt">PLEASE CONFIRM THAT THE INFORMATION BELOW IS CORRECT</string>
+    <string name="submitPrompt">PRESS SUBMIT TO CONFIRM</string>
+    <string name="editPrompt">PRESS BACK TO EDIT</string>
     <string name="submitButton">SUBMIT</string>
+    <string name="backButton">BACK</string>
     <string name="successButton">SUCCESS!</string>
-    <string name="custInfo"></string>
+    <string name="custInfo">display the freaking information already courtney!!!</string>
+    <string name="printQRC">PRINT QR CODE</string>
+    <string name="printPrompt">THIS QR CODE IDENTIFIES YOUR ITEM PLEASE PRESS THE BUTTON BELOW AND ADHERE PRINTED LABEL ON YOUR PACKAGE</string>
+    <string name="qrcodeimg">QR CODE IMAGE HERE</string>
+    <string-array name="items">
+        <item>Knife/Tool ($17.95)</item>
+        <item>Liquid ($25.95)</item>
+        <item>Lighter ($27.95)</item>
+        <item>Other ($18.95)</item>
+    </string-array>
 </resources>
