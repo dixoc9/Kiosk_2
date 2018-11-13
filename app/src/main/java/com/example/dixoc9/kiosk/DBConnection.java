@@ -30,7 +30,9 @@ class DBConnection extends AsyncTask<String, Void, String>
     protected String doInBackground(String... params)
     {
         String type = params[0];
-        String update_url = "http://student2.cs.appstate.edu/dixoncs/SecureShip/skeleton/updateDatabase.php";
+        //String update_url = "http://student2.cs.appstate.edu/dixoncs/SecureShip/skeleton/updateDatabase.php";
+        //String update_url = "http://student2.cs.appstate.edu/dixoncs/SecureShip/updateDatabase.php";
+        String update_url = "http://student2.cs.appstate.edu/dixoncs/updateDatabase.php";
         if(type.equals("update"))
         {
             try
